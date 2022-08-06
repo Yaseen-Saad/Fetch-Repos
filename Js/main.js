@@ -29,16 +29,19 @@ function getRepos() {
               showMore = document.createElement("p");
             name.innerText = repo.name;
             privacy.innerText = repo.visibility;
+              repoLink.target = "_blank"
             repoLink.innerText = "To repo";
             repoLink.href = repo.html_url;
             showMore.innerText = "Show More";
             if (repo.has_pages) {
               demoLink = document.createElement("a");
               demoLink.href = `https://${userName.value}.github.io/${repo.name}`;
+              demoLink.target = "_blank"
               demoLink.innerText = "To Demo";
             } else {
               demoLink = document.createElement("p");
               demoLink.innerHTML = "No Demo";
+              demoLink.target = "_blank"
               demoLink.style.cursor = "defult";
             }
             buttonsDiv.append(privacy);
